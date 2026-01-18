@@ -1,0 +1,10 @@
+# Ignorar la carpeta de VS Code
+.vscode/
+
+# Ignorar ejecutables (Linux)
+*.out
+*.exe
+a.out
+
+# Ignorar archivos .txt específicos
+some.txt
