@@ -36,7 +36,6 @@ List* createList(List* l, uint8_t size, int count)
     //[0] -> 4 bytes [1] -> 4 bytes -> [2], por que malloc fue inicializado con un puntero a un int
     //int*, pero si hubiera sido inicializado con un puntero a char*, los saltos serian de 1 byte
     //mas adelante se vera por que esto es importante
-    //printf("addres succesful %p\n", l->type);
     UpdateLast(l);
     return l;
 }
@@ -68,9 +67,6 @@ void PushLast(List *list, void* value)
     //realloc actualiza el espacio de memoria que previamente fue creado en malloc, es decir 
     // si previamente en malloc reservamos 10 bytes de memoria, y queremos anadir otro valor a la lista
     //de 3 bytes, realloc agarra esos 10 bytes, y le anade otros 3 bytes de memoria
-    //printf("current count of values, copying in index: %i\n"
-        //"realloc in size: %i\n"
-        //"copying in: %i", list->count, list->count * list->size, list->count * list->size);
 
     memcpy(list->type + (( list->count - 1) * list->size), value, list->size);
     //memcpy copia cada uno de los bytes de un puntero, y los pone en otro, es decir, copia tal cual la informacion

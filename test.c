@@ -32,7 +32,6 @@ int main(int argc, char* argv)
     StackCreateList(&slist, sizeof(int), 3);
     Push(int, &slist, 322);
     printf("list in stack, values in heap: %i\n", GetValueRaw(int, &slist, slist.last));
-    //free(slist.type);
     List* charList = createList(charList, sizeof(char*), 3 );
     PushLast(charList, "holaa");
     printf("char*: %s \n", GetValueP(char, charList, charList->last));
@@ -41,12 +40,7 @@ int main(int argc, char* argv)
     Push(int, list, 577);
     ChangeValueIn(list, &(int){4777}, 2);
     printf("%i\n", GetValueRaw(int, list, list->count - 1));
-    //free(slist.type);
-    //free(charList->type);
-    //free(charList);
-    //free(list->type);
-    //free(list);
-
+    
     printf("\n\n\n\n\n ORGANIZED IMPLEMENTATIONS");
     printf("\n STACK LISTS\n");
     List stringList;
@@ -58,8 +52,6 @@ int main(int argc, char* argv)
         printf("value: %f \n", GetValueRaw(float, &flist, flist.last));
     }
  
-    //List arrayList;
-    //StackCreateList(&arrayList, sizeof(char*), 25);
     StackCreateList(&stringList, sizeof(char*), 30);
     for(int i = 0; i < 10; i++)
     {
@@ -71,14 +63,6 @@ int main(int argc, char* argv)
 
     ChangeValueIn(&stringList, "ayyy", 0); 
     printf("changed first: %s\n", GetValueP(char , &stringList,0 ));
-    //despues termino esto, es pasar variables a un string
-   // for(int i = 0; i < 3; i++)
-    //{
-        //snprintf((char*)( arrayList.type + (arrayList.size * i) ), sizeof(char) * 10, "%d", i);
-        //printf("strv: %s", GetValueRaw(char*, &arrayList, i));
-    //}
-    //free(arrayList.type);
-
     printf("HEAP LISTS\n");
 
     List* stlist = createList(stlist, sizeof(float), 5);
