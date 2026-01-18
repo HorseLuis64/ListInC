@@ -6,5 +6,6 @@
 *.exe
 a.out
 
+test
 # Ignorar archivos .txt específicos
 some.txt
